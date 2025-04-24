@@ -22,8 +22,13 @@
 const {readFile} = require("fs/promises");
 
 const getData = async (path) => {
+    try{
         const data = await readFile(path, 'utf8',)
-            return data
-        };
+        console.log(data)
+    }
+    catch(error){
+        console.log(error)
+    }}
 
-getData('./contends/firstfile.txt').then(console.log).catch(console.error)
+getData('./contends/firstfile.txt');
+console.log("Hello")
